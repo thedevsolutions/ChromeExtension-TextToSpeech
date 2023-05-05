@@ -1,0 +1,35 @@
+{
+    "name": "Speech to Text",
+    "description": "Enables speech to text functionality.",
+    "version": "1.0",
+    "manifest_version": 2,
+    "icons": {
+        "16": "icon1.png",
+        "48": "icon2.png",
+        "128": "icon3.png"
+    },
+    "permissions": ["tabs", "activeTab", "storage", "speechRecognition"],
+    "content_scripts": [
+        {
+            "matches": ["<all_urls>"],
+            "js": ["content.js"]
+        }
+    ],
+    "background": {
+        "scripts": ["background.js"],
+        "persistent": true
+    },
+    "browser_action": {
+        "default_popup": "popup.html",
+        "default_title": "ABC"
+    },
+    "commands": {
+        "Ctrl+M": {
+            "suggested_key": {
+                "default": "Ctrl+M",
+                "mac": "Command+M"
+            },
+            "description": "Ctrl+M."
+        }
+    }
+}
